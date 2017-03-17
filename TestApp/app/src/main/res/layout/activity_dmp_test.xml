@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/codeImg"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/button16"
+        android:layout_centerHorizontal="true" />
+
+
+    <LinearLayout
+        android:id="@+id/dfu_msg"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16dp"
+        android:orientation="vertical"
+        android:lineSpacingExtra="5dp"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:background="@drawable/border"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imgName"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/name"/>
+
+            <TextView
+                android:id="@+id/test_result"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="测试结果: "
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#e3e3e3" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAddress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/address"/>
+
+            <TextView
+                android:id="@+id/token_result"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Token验证: "
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#e3e3e3" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgRssi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/rssi"/>
+
+            <TextView
+                android:id="@+id/device_rssi"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#e3e3e3" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgToken"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/token"/>
+
+            <TextView
+                android:id="@+id/device_token"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#e3e3e3" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/dfuLv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"></ListView>
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_below="@id/dfu_msg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="90dp"
+        android:text="通过测试"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/yellowbtn" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_below="@id/dfu_msg"
+        android:textColor="#FFFFFF"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="测试失败"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        android:background="@drawable/redbtn" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_below="@id/dfu_msg"
+        android:textColor="#FFFFFF"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="打印mac地址"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:background="@drawable/yellowbtn" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_below="@id/dfu_msg"
+        android:textColor="#FFFFFF"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="开始新测试"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:background="@drawable/greenbtn" />
+
+
+    <TextView
+        android:id="@+id/bottom_msg_dfu"
+        android:layout_width="match_parent"
+        android:background="#4F94CD"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
