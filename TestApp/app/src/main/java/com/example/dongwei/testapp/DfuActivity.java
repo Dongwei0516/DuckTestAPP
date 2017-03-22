@@ -13,7 +13,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,10 +43,10 @@ import static com.example.dongwei.testapp.R.id.strength;
  * Created by dongwei on 2017/3/13.
  */
 
-public class DfuActivity extends Activity {
+public class DfuActivity extends AppCompatActivity{
 
     private Button btnStartTest, btnDfuUpdate, btnScanStart;
-    private TextView deviceDfu, lastDfu,btmMsg;
+    private TextView deviceDfu, lastDfu, btmMsg;
     private BluetoothGatt mBluetoothGatt;
     private Context context;
     private BluetoothAdapter mBluetoothAdapter;
@@ -59,31 +61,31 @@ public class DfuActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        this.setTitle("DFU升级");
         setContentView(R.layout.activity_dfu);
 
         requestMacAddress();
 
         deviceDfu = (TextView)findViewById(R.id.device_Dfu);
         lastDfu = (TextView)findViewById(R.id.lastDfu);
-        btnStartTest = (Button)findViewById(R.id.button9);
-        btnDfuUpdate = (Button)findViewById(R.id.button10);
-        btnScanStart = (Button)findViewById(R.id.button13);
+        btnDfuUpdate = (Button)findViewById(R.id.dfuModeBtn);
+        btnScanStart = (Button)findViewById(R.id.reconncetBtn);
         btmMsg = (TextView)findViewById(R.id.bottom_msg_dfu);
         listView = (ListView)findViewById(R.id.dfuLv);
 
         context = this;
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-
-        btnStartTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DfuActivity.this,TestActivity.class);
-                Bundle bundle = new Bundle();
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });
+//
+//        btnStartTest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(DfuActivity.this,TestActivity.class);
+//                Bundle bundle = new Bundle();
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//            }
+//        });
 
         btnDfuUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +101,7 @@ public class DfuActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DfuActivity.this,MainActivity.class);
+                DeviceMsgActivity.stopBleConnect();
                 finish();
                 startActivity(intent);
             }
@@ -269,7 +272,7 @@ public class DfuActivity extends Activity {
                 Log.d("DDDDD",dfuDevice.getName());
                 mBluetoothGatt = dfuDevice.connectGatt(context,false,bluetoothGattCallback);
                 new DfuServiceInitiator(dfuDevice.getAddress()).setDisableNotification(true)
-                        .setZip(R.raw.nrfutil_dfu_2017_03_16).start(getApplicationContext(),DfuService.class);
+                        .setZip(R.raw.nrfutil_dfu_v17).start(getApplicationContext(),DfuService.class);
 
             }
         },5000);
@@ -328,4 +331,6 @@ public class DfuActivity extends Activity {
         DfuServiceListenerHelper.unregisterProgressListener(this, mDfuProgressListener);
         super.onPause();
     }
+
+
 }

@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/topbar"></include>
 
     <LinearLayout
         android:id="@+id/dfu_msg"
         android:layout_marginTop="66dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:textSize="16dp"
+        android:layout_marginBottom="0dp"
+        android:textSize="16sp"
         android:orientation="vertical"
         android:lineSpacingExtra="5dp"
         android:layout_width="match_parent"
@@ -21,17 +20,18 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/login"
                 android:layout_marginTop="10dp"
-                android:text="用户登录 "
-                android:textSize="20dp"
-                android:layout_marginLeft="120dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/login_title"
+                android:textSize="20sp"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -59,18 +59,19 @@
                 android:id="@+id/lastDfu"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="用户名: "
-                android:textSize="16dp"
+                android:text="@string/username"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/nameEt"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:background="@null"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_width="160dp"
+                android:singleLine="true"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -98,19 +99,23 @@
                 android:id="@+id/device_rssi"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="密码："
-                android:textSize="16dp"
+                android:text="@string/userpass"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/passwordEt"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:background="@null"
+                android:text="x"
                 android:layout_marginLeft="5dp"
+                android:singleLine="true"
+                android:inputType="textPassword"
                 android:layout_marginTop="10dp"
                 android:layout_width="160dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:imeActionLabel="Login"/>
 
         </LinearLayout>
 
@@ -121,60 +126,50 @@
             android:background="#e3e3e3" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
 
-
-
-            <TextView
-                android:id="@+id/device_token"
-                android:layout_marginLeft="5dp"
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text=""
-                android:textSize="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:background="@drawable/botton_border"
+                android:text="@string/login"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="#e3e3e3" />
 
     </LinearLayout>
 
 
+
+
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/modifyBtn"
         android:layout_below="@id/dfu_msg"
         android:textColor="#FFFFFF"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:text="登录"
+        android:text="@string/modify_user"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
-        android:visibility="visible"
-        android:background="@drawable/greenbtn" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_below="@id/button11"
-        android:textColor="#FFFFFF"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:text="修改用户"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:background="@drawable/yellowbtn" />
 
     <TextView
         android:id="@+id/bottom_msg_test"
         android:layout_width="match_parent"
         android:background="#4F94CD"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:gravity="center"
         android:textAlignment="center"

@@ -6,28 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.dongwei.testapp.MainActivity">
 
-    <include layout="@layout/topbar"></include>
-
-    <!--<TextView-->
-        <!--android:id="@+id/tvTop"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:text="Duck工装测试APP"-->
-        <!--android:textAlignment="center"-->
-        <!--android:textColor="#FFFFFF"-->
-        <!--android:textSize="20dp"-->
-        <!--android:background="#4F94CD"/>-->
-
     <ListView
         android:id="@+id/devicelist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginBottom="60dp"
         android:visibility="gone">
     </ListView>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/startScanBtn"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="开始扫描"
@@ -35,28 +23,50 @@
         android:layout_centerInParent="true"
         android:background="@drawable/start2" />
 
-    <Button
-        android:id="@+id/button19"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:text="刷新列表"
-        android:textColor="#FFFFFF"
-        android:visibility="gone"
-        android:background="@drawable/yellowbtn"
-        android:layout_above="@+id/bottom_msg"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp" />
 
-    <TextView
-        android:id="@+id/bottom_msg"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:background="#4F94CD"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:visibility="visible"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"/>
+        android:gravity="center_vertical"
+        android:background="#4F94CD"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <Switch
+            android:id="@+id/auto_connect_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/not_auto_connect"
+            android:textOn="@string/auto_connect"
+            android:track="@drawable/switch_track"
+            android:thumb="@drawable/switch_thumb"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            />
+        <TextView
+            android:id="@+id/bottom_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:text=""
+            android:visibility="visible"/>
+
+        <Button
+            android:id="@+id/refresh_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"
+            android:background="@drawable/refresh"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

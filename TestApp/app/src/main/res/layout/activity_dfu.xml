@@ -10,7 +10,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:orientation="vertical"
         android:lineSpacingExtra="5dp"
         android:layout_width="match_parent"
@@ -36,8 +36,8 @@
                 android:id="@+id/device_Dfu"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="设备版本号: "
-                android:textSize="16dp"
+                android:text="@string/device_version"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -65,8 +65,8 @@
                 android:id="@+id/lastDfu"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="最新版本号: "
-                android:textSize="16dp"
+                android:text="@string/last_version"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -95,7 +95,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:text=""
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -124,7 +124,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:text=""
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -144,37 +144,25 @@
         android:visibility="gone"></ListView>
 
     <Button
-        android:id="@+id/button9"
-        android:layout_below="@id/dfu_msg"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:visibility="visible"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="90dp"
-        android:text="开始测试"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/yellowbtn" />
-
-    <Button
-        android:id="@+id/button10"
+        android:id="@+id/dfuModeBtn"
         android:layout_below="@id/dfu_msg"
         android:textColor="#FFFFFF"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:text="进入dfu模式"
-        android:layout_marginLeft="200dp"
+        android:text="@string/dfu_mode"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:visibility="visible"
         android:background="@drawable/redbtn" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/reconncetBtn"
         android:layout_below="@id/dfu_msg"
         android:textColor="#FFFFFF"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:text="重新连接"
-        android:layout_marginLeft="200dp"
+        android:text="@string/reconnect"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:visibility="gone"
         android:background="@drawable/greenbtn" />
@@ -183,7 +171,7 @@
         android:id="@+id/bottom_msg_dfu"
         android:layout_width="match_parent"
         android:background="#4F94CD"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:gravity="center"
         android:textAlignment="center"

@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">TestApp</string>
+    <string name="auto_connect">自动连接</string>
+    <string name="not_auto_connect">不自动连接</string>
+    <string name="login_title">用户登录</string>
+    <string name="login">登录</string>
+    <string name="modify_user">修改登录信息</string>
+    <string name="username">用户名: </string>
+    <string name="userpass">密码: </string>
+    <string name="test_result">测试结果: </string>
+    <string name="token_validate">Token验证: </string>
+    <string name="token_verify">比对结果</string>
+    <string name="http_token">网络Token: </string>
+    <string name="test_pass">测试通过</string>
+    <string name="test_failed">测试失败</string>
+    <string name="print_mac_address">打印MAC地址</string>
+    <string name="start_new_test">开始新测试</string>
+
+    <string name="device_name">设备名: </string>
+    <string name="mac_address">Mac地址: </string>
+    <string name="company">公司: </string>
+    <string name="token">Token: </string>
+    <string name="rssi">信号强度: </string>
+    <string name="temp">温度: </string>
+    <string name="humi">湿度: </string>
+    <string name="magnet">磁铁状态: </string>
+    
+    <string name="start_dmp_test">开始测试</string>
+    <string name="stop_dmp_test">停止测试</string>
+    <string name="dmp_test_progress">测试进度</string>
+    <string name="dfu_update">DFU升级</string>
+    <string name="dfu_mode">进入DFU模式</string>
+    <string name="reconnect">重新连接</string>
+    <string name="last_version">最新版本号: </string>
+    <string name="device_version">设备版本号: </string>
+    
+    
+    
 </resources>
